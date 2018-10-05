@@ -15,6 +15,17 @@ public class BfsDriver {
 
         graph.bfs(1);
 
+        BfsGraphPractice practice= new BfsGraphPractice(7);
+        practice.addEdge(1, 4);
+        practice.addEdge(1, 5);
+        practice.addEdge(4, 3);
+        practice.addEdge(4, 2);
+        practice.addEdge(3, 2);
+        practice.addEdge(3, 6);
+        practice.addEdge(2, 6);
+
+        practice.bfs(1);
+
 
     }
 

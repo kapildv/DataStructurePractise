@@ -17,15 +17,24 @@ public class BinarySearchTree {
             root = new Node(key);
             return root;
         }
-
-        if (key < root.key) {
-            root = insertNewNode(root.lptr, key);
-        } else if (key > root.key) {
-            root = insertNewNode(root.rptr, key);
+        if (root.key > key) {
+            root.lptr = insertNewNode(root.lptr, key);
+        } else if (root.key < key) {
+            root.rptr = insertNewNode(root.rptr, key);
         }
-
         return root;
     }
 
+    public void printTree() {
+        inOrder(root);
+    }
+
+    private void inOrder(Node root) {
+        if (root != null) {
+            inOrder(root.lptr);
+            System.out.print(root.key + " ");
+            inOrder(root.rptr);
+        }
+    }
 
 }
